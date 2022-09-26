@@ -5,8 +5,9 @@ const Track = props => {
     const increaseLikes = () => setLikes(prevState => prevState + 1);
     const [ disable, setDisable ] = useState(false);
     const clicked = () => setDisable(true);
+    let trackKey = `${props.name}`;
     return (
-        <li key={props.name}> {props.name}
+        <li key={trackKey}> {props.name}
             <button onClick={() => {
                 increaseLikes();
                 clicked();

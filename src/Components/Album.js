@@ -8,21 +8,21 @@ const Album = (props) => {
     let songList;
     const albumList = props.map((album) => {
         if (album === 'Hybrid Theory') {
-            songList = hybridtheorySongs.map((song) => <Track name={song}/>)
+            songList = hybridtheorySongs.map((song) => <Track key={song} name={song}/>)
         }
         else if (album === 'Meteora') {
-            songList = meteoraSongs.map((song) => <Track name={song}/>)
+            songList = meteoraSongs.map((song) => <Track key={song} name={song}/>)
         }
         else if (album === 'Minutes to Midnight') {
-            songList = mtmSongs.map((song) => <Track name={song}/>)
+            songList = mtmSongs.map((song) => <Track key={song} name={song}/>)
         }
         return (
-            <>  
+            <React.Fragment key={album}>  
                 <h3>Album</h3>
                 <p key={album}>{album}</p>
                 <h3>Tracklist</h3>
                 <ul>{songList}</ul>
-            </>
+            </React.Fragment>
         )
     })
     return (
