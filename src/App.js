@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Artist, Album } from './Components';
 import './index.css';
 
 const App = () => {
+    function Countdown() {
+        const setBg = () => {
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = "#" + randomColor;
+          }
+        const [timeLeft, setTimeLeft] = useState(30);
+        let interval;
+        useEffect(() => {
+            interval = setInterval(() => {
+            setTimeLeft((t) => t - 1);
+            }, 1000);
+        return () => clearInterval(interval);
+        }, []);
+        useEffect(() => {
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                setTimeLeft(30);
+                setBg();
+            }
+        }, [timeLeft]);
+        console.log(timeLeft);
+    }
     const artistName = [['Linkin Park'], ['Kanye West'], ['Flume']];
     const artistGenres = [['Alternative rock', 'Nu metal'], ['Hip hop', 'Gospel'], ['Electronic', 'Future Bass']];
     const artistAlbum = [['Hybrid Theory'], ['The Life Of Pablo'], ['Flume']];
@@ -19,6 +41,7 @@ const App = () => {
     //const artist = <Artist name={artistName} genres={artistGenres.join(', ')} albums={artistAlbum.join(', ')}/>
     return (
         <>
+            {Countdown()}
             <h1>Music App</h1>
             {artistList}
         </>
