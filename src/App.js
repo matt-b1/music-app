@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Artist, Album } from './Components';
 import './index.css';
 
@@ -9,18 +9,16 @@ const App = () => {
             document.body.style.backgroundColor = "#" + randomColor;
           }
         const [timeLeft, setTimeLeft] = useState(30);
-        let interval;
+        const intervalRef = useRef(); 
         useEffect(() => {
-            interval = setInterval(() => {
+            intervalRef.current = setInterval(() => {
             setTimeLeft((t) => t - 1);
             }, 1000);
-        return () => clearInterval(interval);
         }, []);
         useEffect(() => {
             if (timeLeft <= 0) {
-                clearInterval(interval);
-                setTimeLeft(30);
                 setBg();
+                setTimeLeft(30);
             }
         }, [timeLeft]);
         console.log(timeLeft);

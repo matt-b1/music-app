@@ -8,7 +8,7 @@ const Track = props => {
     const clicked = () => setDisable(true);
     let trackKey = `${props.name}`;
     return (
-        <div class='card'>
+        <div className='card'>
             <li className='track' key={trackKey}> 
                 <h4>{props.name}</h4>
                 <button onClick={() => {
