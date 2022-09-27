@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style.css';
 
 const Track = props => {
     const [ likes, setLikes ] = useState(0);
@@ -7,13 +8,16 @@ const Track = props => {
     const clicked = () => setDisable(true);
     let trackKey = `${props.name}`;
     return (
-        <li key={trackKey}> {props.name}
-            <button onClick={() => {
-                increaseLikes();
-                clicked();
-            }} disabled={disable}>Like</button>
-            <p>Likes: {likes} </p>
-        </li>
+        <div class='card'>
+            <li className='track' key={trackKey}> 
+                <h4>{props.name}</h4>
+                <button onClick={() => {
+                    increaseLikes();
+                    clicked();
+                }} disabled={disable}>Like</button>
+                <p>Likes: {likes} </p>
+            </li>
+        </div>
     )
 }
 

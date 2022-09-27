@@ -1,5 +1,6 @@
 import React from 'react';
 import { Artist, Album } from './Components';
+import './index.css';
 
 const App = () => {
     const artistName = [['Linkin Park'], ['Kanye West'], ['Flume']];
@@ -18,6 +19,7 @@ const App = () => {
     //const artist = <Artist name={artistName} genres={artistGenres.join(', ')} albums={artistAlbum.join(', ')}/>
     return (
         <>
+            <h1>Music App</h1>
             {artistList}
         </>
     )

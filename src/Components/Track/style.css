@@ -1,0 +1,28 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+img {
+    border-radius: 5px;
+    height: 500px;
+}
+
+.card li {
+    padding: 50px;
+    list-style: none;
+}
+
+li.track {
+    width: 500px;
+}
+

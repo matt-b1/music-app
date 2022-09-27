@@ -1,14 +1,12 @@
 import React from 'react';
+import './style.css';
 
 export const Artist = (props) => {
     return (
         <div>
-            <h4>Artist: </h4>
-            <p>{props.name}</p>
-            <h4>Genres: </h4>
-            <p>{props.genres}</p>
-            <h4>Album: </h4>
-            <p>{props.album}</p>
+            <p><span>Artist:</span> {props.name}</p>
+            <p><span>Genres:</span> {props.genres}</p>
+            <p><span>Album:</span> {props.album}</p>
         </div>
     )
 }
