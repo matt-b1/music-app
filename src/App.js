@@ -5,21 +5,20 @@ const App = () => {
     const artistName = [['Linkin Park'], ['Kanye West'], ['Flume']];
     const artistGenres = [['Alternative rock', 'Nu metal'], ['Hip hop', 'Gospel'], ['Electronic', 'Future Bass']];
     const artistAlbum = [['Hybrid Theory'], ['The Life Of Pablo'], ['Flume']];
-
     const artistList = artistName.map((artist, index) => {
         const artistInfo = <Artist name={artistName[index]} genres={artistGenres[index].join(', ')} album={artistAlbum[index]}/>
+        const album = Album(artistAlbum[index]);
         return (
-            <React.Fragment key={artist}>  
+            <React.Fragment key={artist}>           
                 {artistInfo}
+                {album}
             </React.Fragment>
         )
     })
     //const artist = <Artist name={artistName} genres={artistGenres.join(', ')} albums={artistAlbum.join(', ')}/>
-    const album = Album(artistAlbum);
     return (
         <>
             {artistList}
-            {album}
         </>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Track from '../Track/index.js';
 
 export const Album = (props) => {
+    console.log(props);
     let songList;
     const hybridtheorySongs = ['Papercut', 'One Step Closer', 'With You', 'Points of Authority', 'Crawling', 'Runaway', 'By Myself', 'In The End', 'A Place For My Head', 'Forgotten', 'Cure for the Itch', 'Pushing Me Away'];
     const albumList = props.map((album) => {
