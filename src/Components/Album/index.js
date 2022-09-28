@@ -1,5 +1,6 @@
 import React from 'react';
 import Track from '../Track/index.js';
+import './style.css';
 
 export const Album = (props) => {
     let songList, imgSrc, imgAlt;
@@ -28,11 +29,17 @@ export const Album = (props) => {
 
         return (
             <React.Fragment key={album}>  
-                <h2 key={album}>{album}</h2>
-                <img src={imgSrc} alt={imgAlt}></img>
-                <h2>Tracklist</h2>
-                <ul>{songList}</ul>
-                <hr></hr>
+                <div className='albumInfo'>
+                    <div>
+                        <h2 key={album}>{album}</h2>
+                        <img src={imgSrc} alt={imgAlt}></img>
+                    </div>
+                    <div className='trackList'>
+                        <h2>Tracklist</h2>
+                        <ul>{songList}</ul>
+                    </div>
+    
+                </div>
             </React.Fragment>
         )
     })
