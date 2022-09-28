@@ -2,7 +2,6 @@ import React from 'react';
 import Track from '../Track/index.js';
 
 export const Album = (props) => {
-    console.log(props);
     let songList, imgSrc, imgAlt;
     const hybridtheorySongs = ['Papercut', 'One Step Closer', 'With You', 'Points of Authority', 'Crawling', 'Runaway', 'By Myself', 'In The End', 'A Place For My Head', 'Forgotten', 'Cure for the Itch', 'Pushing Me Away'];
     const lifeofpabloSongs = ['Ultralight Beam', 'Father Stretch My Hands, Pt. 1', 'Pt. 2', 'Famous', 'Feedback', 'Low Lights', 'Highlights', 'Freestyle 4', 'I Love Kanye', 'Waves', 'FML', 'Real Friends', 'Wolves', 'Frank\'s Track', 'Siiiiiiiiilver Surffffeeeeer Intermission', '30 Hours', 'No More Parties in LA', 'Facts (Charlie Heat Version)', 'Fade', 'Saint Pablo'];
