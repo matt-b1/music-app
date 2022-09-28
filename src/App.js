@@ -2,6 +2,7 @@ import React from 'react';
 import { Artist, Countdown } from './Components';
 import { Routes, Route } from 'react-router-dom';
 import { Home, Artists } from './Pages';
+import { Header, Footer } from './Layout';
 import './index.css';
 
 const App = () => {
@@ -23,12 +24,13 @@ const App = () => {
     return (
         <>
             {Countdown()}
+            <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="artists" element={<Artists />} />
                 <Route path="artists/:artist" element={artistDesc} />
-                
             </Routes>
+            <Footer />
         </>
     )
 }

@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export const Home = () => {
     return (
-        <h1>Music App</h1>
+        <h3>Welcome to my music app using React.</h3>
     )
 }
 
